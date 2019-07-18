@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "name": "Visual Micro",
+      "intelliSenseMode": "windows-msvc-x86",
+      "includePath": [
+        "${projectRoot}..\\LED3ch",
+        "${projectRoot}..\\..\\arduino-1.8.5\\arduino-1.8.5\\libraries",
+        "${projectRoot}..\\..\\..\\Users\\s.novak\\Documents\\Arduino\\libraries",
+        "${projectRoot}..\\..\\arduino-1.8.5\\arduino-1.8.5\\hardware\\arduino\\avr\\libraries",
+        "${projectRoot}..\\..\\arduino-1.8.5\\arduino-1.8.5\\hardware\\arduino\\avr\\cores\\arduino",
+        "${projectRoot}..\\..\\arduino-1.8.5\\arduino-1.8.5\\hardware\\arduino\\avr\\variants\\eightanaloginputs",
+        "${projectRoot}..\\..\\arduino-1.8.5\\arduino-1.8.5\\hardware\\tools\\avr\\avr\\include",
+        "${projectRoot}..\\..\\arduino-1.8.5\\arduino-1.8.5\\hardware\\tools\\avr\\avr\\include\\avr",
+        "${projectRoot}..\\..\\arduino-1.8.5\\arduino-1.8.5\\hardware\\tools\\avr\\lib\\gcc\\avr\\4.8.1\\include",
+        "${projectRoot}..\\..\\arduino-1.8.5\\arduino-1.8.5\\hardware\\tools\\avr\\lib\\gcc\\avr\\4.9.2\\include",
+        "${projectRoot}..\\..\\arduino-1.8.5\\arduino-1.8.5\\hardware\\tools\\avr\\lib\\gcc\\avr\\4.9.3\\include"
+      ],
+      "defines": [
+        "__AVR_atmega328p__",
+        "__AVR_ATmega328P__",
+        "__AVR_ATmega328p__",
+        "F_CPU=16000000L",
+        "ARDUINO=10805",
+        "ARDUINO_AVR_NANO",
+        "ARDUINO_ARCH_AVR",
+        "__cplusplus=201103L",
+        "_VMICRO_INTELLISENSE"
+      ]
+    }
+  ]
+}
