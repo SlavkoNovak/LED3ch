@@ -11,7 +11,7 @@
 
 namespace eSeN
 {
-	namespace GDC
+	namespace LED3ch
 	{
 		namespace Util
 		{

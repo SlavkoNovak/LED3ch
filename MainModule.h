@@ -10,7 +10,7 @@
 #include "config.h"
 	
 using namespace uHDL;
-using namespace eSeN::GDC::Util;
+using namespace eSeN::LED3ch::Util;
 
 //Main module -->
 uMODULE(LED3ch)
