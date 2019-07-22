@@ -9,9 +9,9 @@
 #define IN_CH1 14    //A0
 #define IN_CH2 15    //A1
 #define IN_CH3 16    //A2
-#define PWM1 3       //D3
+#define PWM1 9       //D9
 #define PWM2 6       //D6
-#define PWM3 9       //D9
+#define PWM3 3       //D3
 #define LED 13       //D13
 
 uMODULES(modules, NUM_OF_MODULES)

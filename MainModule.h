@@ -133,11 +133,12 @@ uMODULE(LED3ch)
     InputExternal.Write(true);
   }
 
-  int In2PWMMap(const uint16_t inVal)
+  int In2PWMMap(uint16_t inVal)
   {
-      uint16_t retVal = (float)inVal / 675.84 * 255;
+      inVal = inVal > 1014 ? 1023 : inVal;
+      uint16_t retVal = (float)inVal / 1023.0 * 255;
       retVal = retVal > 255 ? 255 : retVal;
-      return retVal;
+      return 255 - retVal;
   }
   
   //Sensitivity and always method
