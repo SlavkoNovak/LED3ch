@@ -27,18 +27,18 @@ namespace eSeN
 			
 			void Command::Execute(int &OP, int &argument)
 			{
-				char opr[10]; //operator
-				char arg[6]; //operend object
+				char opr[11]; //operator
+				char arg[7]; //operend object
 				
-				memset(opr, '\0', 10);
-				memset(arg, '\0', 6);
+				memset(opr, '\0', 11);
+				memset(arg, '\0', 7);
 
 				char *pcmd = this->cmd;
 				
 				//opr
-				for(int i = 0; i < 10; i++)
+				for(int i = 0; i < 11; i++)
 				{
-					if(9 == i) { this->error = OPR_TO_BIG; break; }
+					if(10 == i) { this->error = OPR_TO_BIG; break; }
 					if(' ' != *pcmd && '\0' != *pcmd) opr[i] = *pcmd++; else break;
 				}
 				pcmd++;
@@ -47,9 +47,9 @@ namespace eSeN
 				//arg
 				if(0 == this->error)
 				{
-					for(int i = 0; i < 6; i++)
+					for(int i = 0; i < 7; i++)
 					{
-						if(5 == i) { this->error = ARG_TO_BIG; break; }
+						if(6 == i) { this->error = ARG_TO_BIG; break; }
 						if(' ' != *pcmd && '\0' != *pcmd) arg[i] = *pcmd++; else break;
 					}
 					pcmd++;
@@ -83,19 +83,19 @@ namespace eSeN
 				{
 					this->operation = OPR_CH1;
 				}
-				else if(!strcmp(oprUpper, "CH2"))
+				else if(strstr(oprUpper, "CH2"))
 				{
 					this->operation = OPR_CH2;
 				}
-				else if(!strcmp(oprUpper, "CH3"))
+				else if(strstr(oprUpper, "CH3"))
 				{
 					this->operation = OPR_CH3;
 				}
-        else if(!strcmp(oprUpper, "OFF"))
+        else if(strstr(oprUpper, "OFF"))
         {
           this->operation = OPR_OFF;
         }
-        else if(!strcmp(oprUpper, "ON"))
+        else if(strstr(oprUpper, "ON"))
         {
           this->operation = OPR_ON;
         }
@@ -103,7 +103,11 @@ namespace eSeN
   			{
   				this->operation = OPR_INPUT;
   			}
-				else
+        else if(strstr(oprUpper, "THRESHOLD"))
+        {
+          this->operation = OPR_THRESHOLD;
+        }
+        else
 				{
 					this->operation = OPR_INVALID;
 					this->error = INVALID_OPERATION;

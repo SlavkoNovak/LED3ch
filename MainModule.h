@@ -7,6 +7,7 @@
 #ifndef _MAIN_MODULE_H
 #define _MAIN_MODULE_H
 
+#include <EEPROM.h>
 #include "config.h"
 	
 using namespace uHDL;
@@ -31,6 +32,7 @@ uMODULE(LED3ch)
   //Signals
 
   //Internal registers
+  uint16_t Threshold;
   
   //Submodules
   
@@ -98,6 +100,11 @@ uMODULE(LED3ch)
           case OPR_INPUT:
             InputExternal.Write(true);
             break;
+
+          case OPR_THRESHOLD:
+            Threshold = arg;
+            EEPROM.put(0, Threshold);
+            break;
             
           default:
             return;
@@ -131,11 +138,13 @@ uMODULE(LED3ch)
     OutPWM2.Write(0);
     OutPWM3.Write(0);
     InputExternal.Write(true);
+    EEPROM.get(0, Threshold);
+    Threshold = Threshold == 0 ? 1023 : Threshold;
   }
 
   int In2PWMMap(uint16_t inVal)
   {
-      inVal = inVal > 1014 ? 1023 : inVal;
+      inVal = inVal > Threshold ? 1023 : inVal; //calibration line
       uint16_t retVal = (float)inVal / 1023.0 * 255;
       retVal = retVal > 255 ? 255 : retVal;
       return 255 - retVal;

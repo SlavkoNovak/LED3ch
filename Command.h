@@ -20,6 +20,7 @@
 #define OPR_OFF 3
 #define OPR_ON 4
 #define OPR_INPUT 5
+#define OPR_THRESHOLD 6
 
 
 namespace eSeN
